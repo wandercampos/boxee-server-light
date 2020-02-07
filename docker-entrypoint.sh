@@ -26,7 +26,7 @@ mkdir -p /var/log/flask/
 chown -R appuser:appuser /var/log/flask
 
 echo 'Starting uwsgi'
-exec uwsgi -s /tmp/boxee.sock --mount /boxee=app:app --uid 999 --enable-threads --logto /tmp/uwsgi.log --http 0.0.0.0:8000 --master &
+exec uwsgi -s /tmp/boxee.sock --mount /boxee=app:app --uid 999 --enable-threads --logto /tmp/uwsgi.log --http 192.168.137.1:8000 --master &
 
 echo 'Starting nginx'
 exec nginx -g "daemon off;"
